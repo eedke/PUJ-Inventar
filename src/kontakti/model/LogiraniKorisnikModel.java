@@ -7,8 +7,8 @@ import java.sql.SQLException;
 public class LogiraniKorisnikModel {
     public static boolean logiraj (String kime, String lozinka) {
         Baza db = new Baza();
-        PreparedStatement ps = db.exec("SELECT * FROM korisnik WHERE korisnicko_ime =? AND "
-                + "lozinka=?");
+        PreparedStatement ps = db.exec("SELECT * FROM users WHERE name =? AND "
+                + "password=?");
         try {
             ps.setString(1, kime);
             ps.setString(2, lozinka);

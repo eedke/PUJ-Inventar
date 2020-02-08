@@ -6,11 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import kontakti.model.KontaktModel;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,12 +40,11 @@ public class KontaktiController implements Initializable {
         kontaktiTbl.setItems(data);
     }
 
-    public void otvoriDodajKorisnika (ActionEvent e) {
+    public void otvoriDodajKorisnika(ActionEvent e) {
         Parent root;
         try {
-            root =
-                    FXMLLoader.load(getClass().getClassLoader().getResource("kontakti/view/DodajKontakt.fxml"));
-                            Stage stage = new Stage();
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("kontakti/view/DodajKontakt.fxml"));
+            Stage stage = new Stage();
             stage.setTitle("Dodaj novi kontakt");
             stage.setScene(new Scene(root, 450, 450));
             stage.show();
@@ -53,5 +54,17 @@ public class KontaktiController implements Initializable {
         }
     }
 
+    public void otvoriSveProdukte(ActionEvent e) {
+        Parent root;
+        try {
+            root = FXMLLoader.load(getClass().getClassLoader().getResource("kontakti/view/Product.fxml"));
+            Stage stage = new Stage();
+            stage.setTitle("Dodaj novi product");
+            stage.setScene(new Scene(root, 450, 450));
+            stage.show();
+        } catch (IOException ex) {
+            Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
 }

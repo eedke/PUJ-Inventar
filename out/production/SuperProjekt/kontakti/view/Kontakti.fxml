@@ -19,6 +19,7 @@
           </columns>
         </TableView>
             <Button mnemonicParsing="false" onAction="#otvoriDodajKorisnika" text="Dodaj kontakt" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#otvoriSveProdukte" text="Otvori produkte" GridPane.rowIndex="2" />
       </children>
       <columnConstraints>
         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

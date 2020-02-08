@@ -32,8 +32,7 @@
             <Label fx:id="prezime" text="   PREZIME" GridPane.rowIndex="2" />
             <Label fx:id="email" text="   EMAIL" GridPane.rowIndex="3" />
             <TextField fx:id="imeTxt" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <TextField fx:id="prezimeTxt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="emailTxt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="emailTxt" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Button mnemonicParsing="false" onAction="#spasi" text="Dodaj kontakt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
          </children>
       </GridPane>

@@ -24,7 +24,7 @@ public class DodajKontaktController implements Initializable {
 
     @FXML
     public void spasi(ActionEvent e){
-        KontaktModel km = new KontaktModel(1, imeTxt.getText(), prezimeTxt.getText(), emailTxt.getText());
+        KontaktModel km = new KontaktModel(1, imeTxt.getText(), emailTxt.getText());
         km.spasi();
     }
 

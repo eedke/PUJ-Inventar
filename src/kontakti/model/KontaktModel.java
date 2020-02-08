@@ -16,10 +16,9 @@ public class KontaktModel {
     SimpleStringProperty prezime = new SimpleStringProperty();
     SimpleStringProperty email = new SimpleStringProperty();
     
-    public KontaktModel (Integer sifra, String ime, String prezime, String email) {
+    public KontaktModel (Integer sifra, String ime, String email) {
         this.sifra = new SimpleIntegerProperty (sifra);
         this.ime = new SimpleStringProperty(ime);
-        this.prezime = new SimpleStringProperty(prezime);
         this.email = new SimpleStringProperty(email);
     }
     
@@ -42,11 +41,11 @@ public class KontaktModel {
     public static ObservableList<KontaktModel> listaKontakata () {
         ObservableList<KontaktModel> lista = FXCollections.observableArrayList();
         Baza DB = new Baza();
-        ResultSet rs = DB.select("SELECT * FROM kontakt");
+        ResultSet rs = DB.select("SELECT * FROM users");
         
         try {
             while (rs.next()) {
-                lista.add(new KontaktModel(rs.getInt("id"), rs.getString("ime"), rs.getString("prezime"), rs.getString("email")));
+                lista.add(new KontaktModel(rs.getInt("id"), rs.getString("name"), rs.getString("email")));
             }
         } catch (SQLException ex) {
             System.out.println("Nastala je greška prilikom iteriranja: " + ex.getMessage());
@@ -55,11 +54,11 @@ public class KontaktModel {
     }
     public void spasi () {
         Baza DB = new Baza();
-        PreparedStatement insert = DB.exec("INSERT INTO kontakt VALUES(null,?,?,?)");
+        PreparedStatement insert = DB.exec("INSERT INTO users VALUES(null,?,?,null,123,null,null,null)");
         try {
             insert.setString(1, this.ime.getValue());
-            insert.setString(2, this.prezime.getValue());
-            insert.setString(3, this.email.getValue());
+            //insert.setString(2, this.prezime.getValue());
+            insert.setString(2, this.email.getValue());
             insert.executeUpdate();
             System.out.println("insert?");
         } catch (SQLException ex) {
