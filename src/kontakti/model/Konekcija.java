@@ -1,4 +1,6 @@
-package kontakti.model;;
+package kontakti.model;
+
+;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -12,15 +14,15 @@ public class Konekcija {
 
     protected Connection konekcija;
 
-    public Konekcija () {
+    public Konekcija() {
         this.host = "localhost";
         this.korisnik = "root";
         this.lozinka = "";
-        this.baza = "tekpub";
+        this.baza = "nova";
         this.spoji();
     }
 
-    public Konekcija (String host, String korisnik, String lozinka, String baza) {
+    public Konekcija(String host, String korisnik, String lozinka, String baza) {
         this.host = host;
         this.korisnik = korisnik;
         this.lozinka = lozinka;
@@ -28,24 +30,23 @@ public class Konekcija {
         this.spoji();
     }
 
-    public void spoji () {
+    public void spoji() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            this.konekcija = DriverManager.getConnection("jdbc:mysql://"+this.host+"/"+this.baza+"?"
-                    + "user="+this.korisnik+"&password="+this.lozinka);
+            this.konekcija = DriverManager.getConnection("jdbc:mysql://" + this.host + "/" + this.baza + "?"
+                    + "user=" + this.korisnik + "&password=" + this.lozinka);
         } catch (ClassNotFoundException e) {
-            System.out.println ("Sustav nije uspio pronaći klasu za konekciju na MYSQL...");
+            System.out.println("Sustav nije uspio pronaći klasu za konekciju na MYSQL...");
         } catch (SQLException e) {
-            System.out.println ("Sustav nije se mogao spojiti na bazu podataka...");
+            System.out.println("Sustav nije se mogao spojiti na bazu podataka...");
         }
     }
 
-    public void odspoji () {
+    public void odspoji() {
         try {
             this.konekcija.close();
         } catch (SQLException e) {
-            System.out.println ("Sustav nije uspio zatvoriti konekciju...");
+            System.out.println("Sustav nije uspio zatvoriti konekciju...");
         }
     }
-
 }

@@ -6,13 +6,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import kontakti.model.KontaktModel;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -27,15 +25,12 @@ public class KontaktiController implements Initializable {
     @FXML
     TableColumn imeTblCol;
     @FXML
-    TableColumn prezimeTblCol;
-    @FXML
     TableColumn emailTblCol;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList<KontaktModel> data = KontaktModel.listaKontakata();
         imeTblCol.setCellValueFactory(new PropertyValueFactory<KontaktModel, String>("Ime"));
-        prezimeTblCol.setCellValueFactory(new PropertyValueFactory<KontaktModel, String>("Prezime"));
         emailTblCol.setCellValueFactory(new PropertyValueFactory<KontaktModel, String>("Email"));
         kontaktiTbl.setItems(data);
     }
@@ -60,11 +55,10 @@ public class KontaktiController implements Initializable {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("kontakti/view/Product.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Dodaj novi product");
-            stage.setScene(new Scene(root, 450, 450));
+            stage.setScene(new Scene(root, 700, 400));
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 }

@@ -22,17 +22,15 @@ public class LoginController implements Initializable {
 
     @FXML
     Label statusLbl;
-    
     @FXML
     TextField kimeTxt;
-    
     @FXML
     PasswordField lozinkaTxt;
-    
-    public void prijavise (ActionEvent e) {
+
+    public void prijavise(ActionEvent e) {
         String kime = kimeTxt.getText();
         String lozinka = lozinkaTxt.getText();
-        
+
         if (kime.equals("") || lozinka.equals("")) {
             statusLbl.setText("Morate unijeti sve vrijednosti!");
         } else {
@@ -46,7 +44,7 @@ public class LoginController implements Initializable {
                     stage.setTitle("Prikaz svih kontakata u Bazi podataka");
                     stage.setScene(new Scene(root, 450, 450));
                     stage.show();
-                    
+
                 } catch (IOException ex) {
                     Logger.getLogger(LoginController.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -55,10 +53,9 @@ public class LoginController implements Initializable {
             }
         }
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
+    }
 }

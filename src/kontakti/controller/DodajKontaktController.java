@@ -13,8 +13,6 @@ public class DodajKontaktController implements Initializable {
     @FXML
     TextField imeTxt;
     @FXML
-    TextField prezimeTxt;
-    @FXML
     TextField emailTxt;
 
     @Override
@@ -23,9 +21,8 @@ public class DodajKontaktController implements Initializable {
     }
 
     @FXML
-    public void spasi(ActionEvent e){
+    public void spasi(ActionEvent e) {
         KontaktModel km = new KontaktModel(1, imeTxt.getText(), emailTxt.getText());
         km.spasi();
     }
-
 }

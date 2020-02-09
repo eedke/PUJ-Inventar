@@ -7,29 +7,39 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontakti.controller.ProductController">
-  <children>
-    <GridPane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="600.0">
-      <children>
-        <TableView fx:id="productsTbl" prefHeight="366.0" prefWidth="600.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
-          <columns>
-            <TableColumn id="imePTblCol" fx:id="imePTblCol" prefWidth="75.0" text="Ime" />
-            <TableColumn id="opisPTblCol" fx:id="opisPTblCol" prefWidth="75.0" text="Opis" />
-            <TableColumn id="cijenaPTblCol" fx:id="cijenaPTblCol" prefWidth="150.0" resizable="true" text="Cijena" />
-          </columns>
-        </TableView>
-            
-      </children>
-      <columnConstraints>
-        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      </columnConstraints>
-      <rowConstraints>
-        <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES" />
-        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-      </rowConstraints>
-    </GridPane>
-  </children>
-  <stylesheets>
-    <URL value="@kontakti.css" />
-  </stylesheets>
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="720.0" styleClass="mainFxmlClass"
+            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kontakti.controller.ProductController">
+    <children>
+        <GridPane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="720.0">
+            <children>
+                <TableView fx:id="productsTbl" prefHeight="366.0" prefWidth="720.0" GridPane.columnIndex="0"
+                           GridPane.rowIndex="0">
+                    <columns>
+                        <TableColumn id="idPTblCol" fx:id="idPTblCol" prefWidth="75.0" text="Id"/>
+                        <TableColumn id="imePTblCol" fx:id="imePTblCol" prefWidth="75.0" resizable="true" text="Ime"/>
+                        <TableColumn id="opisPTblCol" fx:id="opisPTblCol" prefWidth="150.0" resizable="true"
+                                     text="Opis"/>
+                        <TableColumn id="cijenaPTblCol" fx:id="cijenaPTblCol" prefWidth="100.0" resizable="true"
+                                     text="Cijena"/>
+                        <TableColumn id="kolicinaPTblCol" fx:id="kolicinaPTblCol" prefWidth="150.0" resizable="true"
+                                     text="Količina"/>
+                        <TableColumn id="tipPTblCol" fx:id="tipPTblCol" prefWidth="125.0" resizable="true"
+                                     text="Vrsta"/>
+                    </columns>
+                </TableView>
+
+            </children>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" prefWidth="120.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+        </GridPane>
+    </children>
+    <stylesheets>
+        <URL value="@kontakti.css"/>
+    </stylesheets>
 </AnchorPane>

@@ -10,21 +10,21 @@ public class Baza extends Konekcija {
     private Statement upit;
     private PreparedStatement execUpit;
 
-    public Baza () {
+    public Baza() {
         super();
     }
 
-    public ResultSet select (String sql) {
+    public ResultSet select(String sql) {
         try {
             this.upit = this.konekcija.createStatement();
             return this.upit.executeQuery(sql);
         } catch (SQLException e) {
-            System.out.println ("Nastala je greška priliko izvršavanja upita " + e.getMessage());
+            System.out.println("Nastala je greška priliko izvršavanja upita " + e.getMessage());
             return null;
         }
     }
 
-    public PreparedStatement exec (String sql) {
+    public PreparedStatement exec(String sql) {
         try {
             this.execUpit = this.konekcija.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             return this.execUpit;
