@@ -11,16 +11,16 @@ import java.sql.SQLException;
 
 public class ProductModel {
     SimpleIntegerProperty id;
-    SimpleStringProperty name;
+    SimpleStringProperty title;
     SimpleStringProperty description;
     SimpleFloatProperty price;
     SimpleIntegerProperty amount;
     SimpleIntegerProperty type;
 
-    public ProductModel(Integer id, String name, String description, Float price, Integer amount, Integer type) {
+    public ProductModel(Integer id, String title, String description, Float price, Integer amount, Integer type) {
 
         this.id = new SimpleIntegerProperty(id);
-        this.name = new SimpleStringProperty(name);
+        this.title = new SimpleStringProperty(title);
         this.description = new SimpleStringProperty(description);
         this.price = new SimpleFloatProperty(price);
         this.amount = new SimpleIntegerProperty(amount);
@@ -35,12 +35,12 @@ public class ProductModel {
         return id;
     }
 
-    public String getName() {
-        return name.get();
+    public String getTitle() {
+        return title.get();
     }
 
-    public SimpleStringProperty nameProperty() {
-        return name;
+    public SimpleStringProperty titleProperty() {
+        return title;
     }
 
     public String getDescription() {
@@ -78,11 +78,11 @@ public class ProductModel {
     public static ObservableList<ProductModel> listaProdukta() {
         ObservableList<ProductModel> lista = FXCollections.observableArrayList();
         Baza DB = new Baza();
-        ResultSet rs = DB.select("SELECT `id`, `name`, `description`, `price`, `amount`, `type` FROM `products`");
+        ResultSet rs = DB.select("SELECT `id`, `title`, `description`, `price`, `amount`, `type` FROM `products`");
 
         try {
             while (rs.next()) {
-                lista.add(new ProductModel(rs.getInt("id"), rs.getString("name"),
+                lista.add(new ProductModel(rs.getInt("id"), rs.getString("title"),
                         rs.getString("description"), rs.getFloat("price"),
                         rs.getInt("amount"), rs.getInt("type")));
             }

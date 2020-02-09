@@ -31,7 +31,7 @@ public class ProductController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         ObservableList<ProductModel> data = ProductModel.listaProdukta();
         idPTblCol.setCellValueFactory(new PropertyValueFactory<ProductModel, Integer>("id"));
-        imePTblCol.setCellValueFactory(new PropertyValueFactory<ProductModel, String>("name"));
+        imePTblCol.setCellValueFactory(new PropertyValueFactory<ProductModel, String>("title"));
         opisPTblCol.setCellValueFactory(new PropertyValueFactory<ProductModel, String>("description"));
         cijenaPTblCol.setCellValueFactory(new PropertyValueFactory<ProductModel, Float>("price"));
         kolicinaPTblCol.setCellValueFactory(new PropertyValueFactory<ProductModel, Integer>("amount"));
