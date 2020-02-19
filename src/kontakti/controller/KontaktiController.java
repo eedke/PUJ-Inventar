@@ -55,7 +55,7 @@ public class KontaktiController implements Initializable {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("kontakti/view/Product.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Dodaj novi product");
-            stage.setScene(new Scene(root, 700, 400));
+            stage.setScene(new Scene(root, 820, 400));
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
