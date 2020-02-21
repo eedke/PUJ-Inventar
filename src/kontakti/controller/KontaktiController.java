@@ -41,7 +41,7 @@ public class KontaktiController implements Initializable {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("kontakti/view/DodajKontakt.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Dodaj novi kontakt");
-            stage.setScene(new Scene(root, 450, 450));
+            stage.setScene(new Scene(root, 650, 400));
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(KontaktiController.class.getName()).log(Level.SEVERE,
@@ -55,7 +55,7 @@ public class KontaktiController implements Initializable {
             root = FXMLLoader.load(getClass().getClassLoader().getResource("kontakti/view/Product.fxml"));
             Stage stage = new Stage();
             stage.setTitle("Dodaj novi product");
-            stage.setScene(new Scene(root, 820, 400));
+            stage.setScene(new Scene(root, 810, 410));
             stage.show();
         } catch (IOException ex) {
             Logger.getLogger(ProductController.class.getName()).log(Level.SEVERE, null, ex);
