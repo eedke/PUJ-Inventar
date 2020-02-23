@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import java.net.*?>
 <?import java.util.*?>
@@ -7,43 +8,39 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="720.0" styleClass="mainFxmlClass"
-            xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="kontakti.controller.ProductController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="720.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kontakti.controller.ProductController">
     <children>
         <GridPane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="810.0">
             <children>
-                <TableView fx:id="productsTbl" prefHeight="370.0" prefWidth="810.0" GridPane.columnIndex="0"
-                           GridPane.rowIndex="0">
+                <TableView fx:id="productsTbl" prefHeight="370.0" prefWidth="810.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
                     <columns>
-                        <TableColumn id="idPTblCol" fx:id="idPTblCol" prefWidth="75.0" text="Id"/>
-                        <TableColumn id="imePTblCol" fx:id="imePTblCol" prefWidth="75.0" resizable="true" text="Ime"/>
-                        <TableColumn id="opisPTblCol" fx:id="opisPTblCol" prefWidth="150.0" resizable="true"
-                                     text="Opis"/>
-                        <TableColumn id="cijenaPTblCol" fx:id="cijenaPTblCol" prefWidth="100.0" resizable="true"
-                                     text="Cijena"/>
-                        <TableColumn id="kolicinaPTblCol" fx:id="kolicinaPTblCol" prefWidth="150.0" resizable="true"
-                                     text="Količina"/>
-                        <TableColumn id="tipPTblCol" fx:id="tipPTblCol" prefWidth="125.0" resizable="true"
-                                     text="Vrsta"/>
-                        <TableColumn id="subtipPTblCol" fx:id="subtipPTblCol" prefWidth="125.0" resizable="true"
-                                     text="podVrsta"/>
+                        <TableColumn id="idPTblCol" fx:id="idPTblCol" prefWidth="75.0" text="Id" />
+                        <TableColumn id="imePTblCol" fx:id="imePTblCol" prefWidth="75.0" resizable="true" text="Ime" />
+                        <TableColumn id="opisPTblCol" fx:id="opisPTblCol" prefWidth="150.0" resizable="true" text="Opis" />
+                        <TableColumn id="cijenaPTblCol" fx:id="cijenaPTblCol" prefWidth="100.0" resizable="true" text="Cijena" />
+                        <TableColumn id="kolicinaPTblCol" fx:id="kolicinaPTblCol" prefWidth="150.0" resizable="true" text="Količina" />
+                        <TableColumn id="tipPTblCol" fx:id="tipPTblCol" prefWidth="125.0" resizable="true" text="Vrsta" />
+                        <TableColumn id="subtipPTblCol" fx:id="subtipPTblCol" prefWidth="125.0" resizable="true" text="podVrsta" />
                     </columns>
                 </TableView>
-                <Button mnemonicParsing="false" onAction="#otvoriDodajProdukt" text="Dodaj produkt"
-                        GridPane.rowIndex="1"/>
-                <Button fx:id="urediBtn" mnemonicParsing="false" text="Uredi Produkt" GridPane.columnIndex="1" />
+                <Button mnemonicParsing="false" onAction="#otvoriDodajProdukt" text="Dodaj produkt" GridPane.rowIndex="1" />
+                <Button fx:id="urediBtn" mnemonicParsing="false" onAction="#otvoriUrediProdukt" text="Uredi Produkt" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <TextField fx:id="editTextId" maxWidth="100" promptText="Product ID" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="175.0" />
+               </GridPane.margin></TextField>
             </children>
             <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" prefWidth="120.0"/>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" prefWidth="120.0" />
+            <ColumnConstraints />
             </columnConstraints>
             <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES"/>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="-1.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
         </GridPane>
     </children>
     <stylesheets>
-        <URL value="@kontakti.css"/>
+        <URL value="@kontakti.css" />
     </stylesheets>
 </AnchorPane>
