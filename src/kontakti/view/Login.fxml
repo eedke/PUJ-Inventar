@@ -34,10 +34,11 @@
                         <Font name="System Bold" size="15.0"/>
                     </font>
                 </Label>
-                <PasswordField fx:id="lozinkaTxt" prefWidth="200.0" promptText="Unesite lozinku"
-                               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
                 <TextField fx:id="kimeTxt" prefWidth="200.0" promptText="Unesite korisničko ime"
                            GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <PasswordField fx:id="lozinkaTxt" prefWidth="200.0" promptText="Unesite lozinku"
+                               GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
             </children>
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="198.0" minWidth="10.0" prefWidth="105.0"/>

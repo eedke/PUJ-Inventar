@@ -11,9 +11,9 @@
             xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="kontakti.controller.ProductController">
     <children>
-        <GridPane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="720.0">
+        <GridPane layoutX="0.0" layoutY="0.0" prefHeight="400.0" prefWidth="810.0">
             <children>
-                <TableView fx:id="productsTbl" prefHeight="366.0" prefWidth="720.0" GridPane.columnIndex="0"
+                <TableView fx:id="productsTbl" prefHeight="370.0" prefWidth="810.0" GridPane.columnIndex="0"
                            GridPane.rowIndex="0">
                     <columns>
                         <TableColumn id="idPTblCol" fx:id="idPTblCol" prefWidth="75.0" text="Id"/>
@@ -26,9 +26,13 @@
                                      text="Količina"/>
                         <TableColumn id="tipPTblCol" fx:id="tipPTblCol" prefWidth="125.0" resizable="true"
                                      text="Vrsta"/>
+                        <TableColumn id="subtipPTblCol" fx:id="subtipPTblCol" prefWidth="125.0" resizable="true"
+                                     text="podVrsta"/>
                     </columns>
                 </TableView>
-
+                <Button mnemonicParsing="false" onAction="#otvoriDodajProdukt" text="Dodaj produkt"
+                        GridPane.rowIndex="1"/>
+                <Button fx:id="urediBtn" mnemonicParsing="false" text="Uredi Produkt" GridPane.columnIndex="1" />
             </children>
             <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="40.0" prefWidth="120.0"/>

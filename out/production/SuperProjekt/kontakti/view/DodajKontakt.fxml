@@ -32,10 +32,12 @@
                 </Label>
                 <Label fx:id="ime" text="   IME" GridPane.rowIndex="1"/>
                 <Label fx:id="email" text="   EMAIL" GridPane.rowIndex="2"/>
+                <Label fx:id="pass" text="   Password" GridPane.rowIndex="3"/>
                 <TextField fx:id="imeTxt" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 <TextField fx:id="emailTxt" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
-                <Button mnemonicParsing="false" onAction="#spasi" text="Dodaj kontakt" GridPane.columnIndex="1"
-                        GridPane.rowIndex="3"/>
+                <TextField fx:id="passTxt" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Button fx:id="closeButton" mnemonicParsing="false" onAction="#spasi" text="Dodaj kontakt" GridPane.columnIndex="1"
+                        GridPane.rowIndex="4"/>
             </children>
         </GridPane>
     </children>
