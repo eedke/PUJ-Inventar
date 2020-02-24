@@ -25,7 +25,7 @@
                 </TableView>
                 <Button mnemonicParsing="false" onAction="#otvoriDodajProdukt" text="Dodaj produkt" GridPane.rowIndex="1" />
                 <Button fx:id="urediBtn" mnemonicParsing="false" onAction="#otvoriUrediProdukt" text="Uredi Produkt" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
-            <TextField fx:id="editTextId" maxWidth="100" promptText="Product ID" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+            <TextField fx:id="editTextId" maxWidth="100" promptText="Product ID..." GridPane.halignment="RIGHT" GridPane.rowIndex="1">
                <GridPane.margin>
                   <Insets right="175.0" />
                </GridPane.margin></TextField>

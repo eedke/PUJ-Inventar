@@ -17,6 +17,7 @@
 -fx-border-radius:0;
 }
 .text-input:focused {
+-fx-background-color:#2d3336;
 -fx-border-color:#ffcc00;
 -fx-border-width:0 0 1px 0;
 }
