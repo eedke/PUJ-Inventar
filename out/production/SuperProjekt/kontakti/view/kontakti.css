@@ -60,4 +60,15 @@
 -fx-alignment:center-left;
 -fx-opacity:1;
 }
+#editTextId {
+    -fx-background-color:#2d3336;
+    -fx-text-fill:#ffcc00;
+    -fx-prompt-text-fill:#ffcc00;
+}
+#editTextId:focused {
+    -fx-background-color:#2d3336;
+     -fx-text-fill:#ffcc00;
+     -fx-prompt-text-fill:#2d3336;
+     -fx-border-width: 0 0 1 0;
+     -fx-border-color:#ffcc00;
 }
