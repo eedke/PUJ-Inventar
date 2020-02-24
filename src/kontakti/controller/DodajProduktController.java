@@ -3,7 +3,9 @@ package kontakti.controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import kontakti.model.KontaktModel;
 import kontakti.model.ProductModel;
 
@@ -24,6 +26,8 @@ public class DodajProduktController implements Initializable {
     TextField vrstaTxt;
     @FXML
     TextField podvrstaTxt;
+    @FXML
+    Button closeButton;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -34,5 +38,7 @@ public class DodajProduktController implements Initializable {
     public void spasi(ActionEvent e) {
         ProductModel pm = new ProductModel(1, imeTxt.getText(), opisTxt.getText(), Float.parseFloat(cijenaTxt.getText()), Integer.parseInt(kolicinaTxt.getText()), vrstaTxt.getText(), podvrstaTxt.getText());
         pm.spasi();
+        Stage stage = (Stage) closeButton.getScene().getWindow();
+        stage.close();
     }
 }

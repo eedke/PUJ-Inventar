@@ -11,7 +11,7 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class KontaktModel {
+public class KontaktModel implements Spremanje{
     SimpleIntegerProperty sifra;
     SimpleStringProperty ime;
     SimpleStringProperty email;
@@ -68,7 +68,7 @@ public class KontaktModel {
             insert.setString(2, this.email.getValue());
             insert.setString(3, this.pass.getValue());
             insert.executeUpdate();
-            System.out.println("insert?");
+            System.out.println("insert user!");
         } catch (SQLException ex) {
             Logger.getLogger(KontaktModel.class.getName()).log(Level.SEVERE, null, ex);
         }

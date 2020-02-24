@@ -18,7 +18,7 @@ public class Konekcija {
         this.host = "localhost";
         this.korisnik = "root";
         this.lozinka = "";
-        this.baza = "TekPub";
+        this.baza = "tekpub";
         this.spoji();
     }
 

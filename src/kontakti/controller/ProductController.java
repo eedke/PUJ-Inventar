@@ -71,6 +71,7 @@ public class ProductController implements Initializable {
         try {
             int id = Integer.parseInt(editTextId.getText());
             System.out.println(id);
+
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/kontakti/view/UrediProdukt.fxml"));
             UrediProduktController controller = fxmlLoader.getController();
             controller = new UrediProduktController(id);
@@ -79,6 +80,9 @@ public class ProductController implements Initializable {
             fxmlLoader.setController(controller);
             Parent root = fxmlLoader.load();
 
+            // Test apstraktne metode
+            ProductModel pm = new ProductModel(2222, "Test","Opis",(float)5.5,5, "", "");
+            pm.ispis();
 
             Scene scene = new Scene(root, 650, 650);
             Stage stage = new Stage();

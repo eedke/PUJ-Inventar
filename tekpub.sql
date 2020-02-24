@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 09, 2020 at 10:08 AM
+-- Generation Time: Feb 24, 2020 at 07:46 PM
 -- Server version: 10.4.8-MariaDB
 -- PHP Version: 7.3.11
 
@@ -45,7 +45,7 @@ CREATE TABLE `failed_jobs` (
 
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
-  `migration` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `migration` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -73,20 +73,12 @@ CREATE TABLE `orders` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `cart` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `payment_id` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `payment_id` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` int(11) NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `user_id`, `cart`, `address`, `payment_id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 1, 'O:8:\"App\\Cart\":3:{s:5:\"items\";a:2:{i:2;a:3:{s:3:\"qty\";i:3;s:5:\"price\";d:24;s:4:\"item\";O:11:\"App\\Product\":26:{s:11:\"\0*\0fillable\";a:4:{i:0;s:9:\"imagePath\";i:1;s:5:\"title\";i:2;s:11:\"description\";i:3;s:5:\"price\";}s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"products\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:13:\"\0*\0attributes\";a:7:{s:2:\"id\";i:2;s:9:\"imagePath\";s:124:\"http://www.vrisak.info/wp-content/uploads/2018/12/Savr%C5%A1eni-hamburger-ima-devet-slojeva-i-visok-je-sedam-centimetara.jpg\";s:5:\"title\";s:11:\"Cheeseburge\";s:11:\"description\";s:20:\"Cheeseburger - dobar\";s:5:\"price\";d:8;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:11:\"\0*\0original\";a:7:{s:2:\"id\";i:2;s:9:\"imagePath\";s:124:\"http://www.vrisak.info/wp-content/uploads/2018/12/Savr%C5%A1eni-hamburger-ima-devet-slojeva-i-visok-je-sedam-centimetara.jpg\";s:5:\"title\";s:11:\"Cheeseburge\";s:11:\"description\";s:20:\"Cheeseburger - dobar\";s:5:\"price\";d:8;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:10:\"\0*\0changes\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:8:\"\0*\0dates\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:10:\"timestamps\";b:1;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}}i:3;a:3:{s:3:\"qty\";i:1;s:5:\"price\";d:6;s:4:\"item\";O:11:\"App\\Product\":26:{s:11:\"\0*\0fillable\";a:4:{i:0;s:9:\"imagePath\";i:1;s:5:\"title\";i:2;s:11:\"description\";i:3;s:5:\"price\";}s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"products\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:13:\"\0*\0attributes\";a:7:{s:2:\"id\";i:3;s:9:\"imagePath\";s:163:\"https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/9D900DB3-435D-4AE4-9375-B152D2813750/Derivates/199C60FC-C264-43A3-B822-88AA5E50E954.jpg\";s:5:\"title\";s:7:\"Nuggets\";s:11:\"description\";s:23:\"Chicken Nuggets - dobri\";s:5:\"price\";d:6;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:11:\"\0*\0original\";a:7:{s:2:\"id\";i:3;s:9:\"imagePath\";s:163:\"https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/9D900DB3-435D-4AE4-9375-B152D2813750/Derivates/199C60FC-C264-43A3-B822-88AA5E50E954.jpg\";s:5:\"title\";s:7:\"Nuggets\";s:11:\"description\";s:23:\"Chicken Nuggets - dobri\";s:5:\"price\";d:6;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:10:\"\0*\0changes\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:8:\"\0*\0dates\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:10:\"timestamps\";b:1;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}}}s:8:\"totalQty\";i:4;s:10:\"totalPrice\";d:30;}', 'asd', 'cs_test_B2wpSeORwiw6RbYQMpLT0gSdYM8pwIZYQtwo0Yk9P1lZUxPNPEssL3QJ', 'asd', '2020-01-28 22:34:36', '2020-01-28 22:34:36'),
-(2, 1, 'O:8:\"App\\Cart\":3:{s:5:\"items\";a:4:{i:1;a:3:{s:3:\"qty\";i:4;s:5:\"price\";d:28;s:4:\"item\";O:11:\"App\\Product\":26:{s:11:\"\0*\0fillable\";a:4:{i:0;s:9:\"imagePath\";i:1;s:5:\"title\";i:2;s:11:\"description\";i:3;s:5:\"price\";}s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"products\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:13:\"\0*\0attributes\";a:7:{s:2:\"id\";i:1;s:9:\"imagePath\";s:63:\"https://static.klix.ba/media/images/vijesti/b_191223138.jpg?v=2\";s:5:\"title\";s:9:\"Hamburger\";s:11:\"description\";s:17:\"Hamburger - dobar\";s:5:\"price\";d:7;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:11:\"\0*\0original\";a:7:{s:2:\"id\";i:1;s:9:\"imagePath\";s:63:\"https://static.klix.ba/media/images/vijesti/b_191223138.jpg?v=2\";s:5:\"title\";s:9:\"Hamburger\";s:11:\"description\";s:17:\"Hamburger - dobar\";s:5:\"price\";d:7;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:10:\"\0*\0changes\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:8:\"\0*\0dates\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:10:\"timestamps\";b:1;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}}i:2;a:3:{s:3:\"qty\";i:3;s:5:\"price\";d:24;s:4:\"item\";O:11:\"App\\Product\":26:{s:11:\"\0*\0fillable\";a:4:{i:0;s:9:\"imagePath\";i:1;s:5:\"title\";i:2;s:11:\"description\";i:3;s:5:\"price\";}s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"products\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:13:\"\0*\0attributes\";a:7:{s:2:\"id\";i:2;s:9:\"imagePath\";s:124:\"http://www.vrisak.info/wp-content/uploads/2018/12/Savr%C5%A1eni-hamburger-ima-devet-slojeva-i-visok-je-sedam-centimetara.jpg\";s:5:\"title\";s:11:\"Cheeseburge\";s:11:\"description\";s:20:\"Cheeseburger - dobar\";s:5:\"price\";d:8;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:11:\"\0*\0original\";a:7:{s:2:\"id\";i:2;s:9:\"imagePath\";s:124:\"http://www.vrisak.info/wp-content/uploads/2018/12/Savr%C5%A1eni-hamburger-ima-devet-slojeva-i-visok-je-sedam-centimetara.jpg\";s:5:\"title\";s:11:\"Cheeseburge\";s:11:\"description\";s:20:\"Cheeseburger - dobar\";s:5:\"price\";d:8;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:10:\"\0*\0changes\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:8:\"\0*\0dates\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:10:\"timestamps\";b:1;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}}i:3;a:3:{s:3:\"qty\";i:2;s:5:\"price\";d:12;s:4:\"item\";O:11:\"App\\Product\":26:{s:11:\"\0*\0fillable\";a:4:{i:0;s:9:\"imagePath\";i:1;s:5:\"title\";i:2;s:11:\"description\";i:3;s:5:\"price\";}s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"products\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:13:\"\0*\0attributes\";a:7:{s:2:\"id\";i:3;s:9:\"imagePath\";s:163:\"https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/9D900DB3-435D-4AE4-9375-B152D2813750/Derivates/199C60FC-C264-43A3-B822-88AA5E50E954.jpg\";s:5:\"title\";s:7:\"Nuggets\";s:11:\"description\";s:23:\"Chicken Nuggets - dobri\";s:5:\"price\";d:6;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:11:\"\0*\0original\";a:7:{s:2:\"id\";i:3;s:9:\"imagePath\";s:163:\"https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/9D900DB3-435D-4AE4-9375-B152D2813750/Derivates/199C60FC-C264-43A3-B822-88AA5E50E954.jpg\";s:5:\"title\";s:7:\"Nuggets\";s:11:\"description\";s:23:\"Chicken Nuggets - dobri\";s:5:\"price\";d:6;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:10:\"\0*\0changes\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:8:\"\0*\0dates\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:10:\"timestamps\";b:1;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}}i:5;a:3:{s:3:\"qty\";i:1;s:5:\"price\";d:3.5;s:4:\"item\";O:11:\"App\\Product\":26:{s:11:\"\0*\0fillable\";a:4:{i:0;s:9:\"imagePath\";i:1;s:5:\"title\";i:2;s:11:\"description\";i:3;s:5:\"price\";}s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"products\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:13:\"\0*\0attributes\";a:7:{s:2:\"id\";i:5;s:9:\"imagePath\";s:89:\"https://www.balawholesalers.com/wp-content/uploads/2019/09/diet-coca-cola-330ml-glass.jpg\";s:5:\"title\";s:9:\"Coca Cola\";s:11:\"description\";s:19:\"Refreshing beverage\";s:5:\"price\";d:3.5;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:11:\"\0*\0original\";a:7:{s:2:\"id\";i:5;s:9:\"imagePath\";s:89:\"https://www.balawholesalers.com/wp-content/uploads/2019/09/diet-coca-cola-330ml-glass.jpg\";s:5:\"title\";s:9:\"Coca Cola\";s:11:\"description\";s:19:\"Refreshing beverage\";s:5:\"price\";d:3.5;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:10:\"\0*\0changes\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:8:\"\0*\0dates\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:10:\"timestamps\";b:1;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}}}s:8:\"totalQty\";i:10;s:10:\"totalPrice\";d:67.5;}', 'Damin', 'cs_test_OPz7caavKX2ejPZxHolSz8BLVK4wh5AeUEtDBh0NzubnzpauPbvQVyBK', 'Admin', '2020-01-29 10:14:18', '2020-01-29 10:14:18'),
-(3, 1, 'O:8:\"App\\Cart\":3:{s:5:\"items\";a:1:{i:1;a:3:{s:3:\"qty\";i:2;s:5:\"price\";d:14;s:4:\"item\";O:11:\"App\\Product\":26:{s:11:\"\0*\0fillable\";a:4:{i:0;s:9:\"imagePath\";i:1;s:5:\"title\";i:2;s:11:\"description\";i:3;s:5:\"price\";}s:13:\"\0*\0connection\";s:5:\"mysql\";s:8:\"\0*\0table\";s:8:\"products\";s:13:\"\0*\0primaryKey\";s:2:\"id\";s:10:\"\0*\0keyType\";s:3:\"int\";s:12:\"incrementing\";b:1;s:7:\"\0*\0with\";a:0:{}s:12:\"\0*\0withCount\";a:0:{}s:10:\"\0*\0perPage\";i:15;s:6:\"exists\";b:1;s:18:\"wasRecentlyCreated\";b:0;s:13:\"\0*\0attributes\";a:7:{s:2:\"id\";i:1;s:9:\"imagePath\";s:63:\"https://static.klix.ba/media/images/vijesti/b_191223138.jpg?v=2\";s:5:\"title\";s:9:\"Hamburger\";s:11:\"description\";s:17:\"Hamburger - dobar\";s:5:\"price\";d:7;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:11:\"\0*\0original\";a:7:{s:2:\"id\";i:1;s:9:\"imagePath\";s:63:\"https://static.klix.ba/media/images/vijesti/b_191223138.jpg?v=2\";s:5:\"title\";s:9:\"Hamburger\";s:11:\"description\";s:17:\"Hamburger - dobar\";s:5:\"price\";d:7;s:10:\"created_at\";s:19:\"2020-01-28 23:26:28\";s:10:\"updated_at\";s:19:\"2020-01-28 23:26:28\";}s:10:\"\0*\0changes\";a:0:{}s:8:\"\0*\0casts\";a:0:{}s:8:\"\0*\0dates\";a:0:{}s:13:\"\0*\0dateFormat\";N;s:10:\"\0*\0appends\";a:0:{}s:19:\"\0*\0dispatchesEvents\";a:0:{}s:14:\"\0*\0observables\";a:0:{}s:12:\"\0*\0relations\";a:0:{}s:10:\"\0*\0touches\";a:0:{}s:10:\"timestamps\";b:1;s:9:\"\0*\0hidden\";a:0:{}s:10:\"\0*\0visible\";a:0:{}s:10:\"\0*\0guarded\";a:1:{i:0;s:1:\"*\";}}}}s:8:\"totalQty\";i:2;s:10:\"totalPrice\";d:14;}', 'test', 'cs_test_iC58hC5YJrqRIy0h88fgPm4rnILPRcAS43KhOAifsdvSwK4bAN0hxvB0', 'Test', '2020-01-29 10:55:25', '2020-01-29 10:55:25');
 
 -- --------------------------------------------------------
 
@@ -95,8 +87,8 @@ INSERT INTO `orders` (`id`, `user_id`, `cart`, `address`, `payment_id`, `name`, 
 --
 
 CREATE TABLE `password_resets` (
-  `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `token` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -108,12 +100,13 @@ CREATE TABLE `password_resets` (
 
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `imagePath` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `imagePath` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` double(8,2) NOT NULL,
   `amount` int(11) NOT NULL,
-  `type` int(11) NOT NULL,
+  `type` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `subtype` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -122,12 +115,40 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`id`, `imagePath`, `title`, `description`, `price`, `amount`, `type`, `created_at`, `updated_at`) VALUES
-(6, 'https://static.klix.ba/media/images/vijesti/b_191223138.jpg?v=2', 'Hamburger', 'Hamburger - dobar', 7.00, 1234, 1, '2020-02-09 07:54:16', '2020-02-09 07:54:16'),
-(7, 'http://www.vrisak.info/wp-content/uploads/2018/12/Savr%C5%A1eni-hamburger-ima-devet-slojeva-i-visok-je-sedam-centimetara.jpg', 'Cheeseburge', 'Cheeseburger - dobar', 8.00, 23234, 1, '2020-02-09 07:54:16', '2020-02-09 07:54:16'),
-(8, 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/9D900DB3-435D-4AE4-9375-B152D2813750/Derivates/199C60FC-C264-43A3-B822-88AA5E50E954.jpg', 'Nuggets', 'Chicken Nuggets - dobri', 6.00, 1634, 1, '2020-02-09 07:54:16', '2020-02-09 07:54:16'),
-(9, 'https://prods3.imgix.net/images/articles/2017_04/Feature-restaurant-butcher-bakery-shops2.jpg?auto=format%2Ccompress&ixjsv=2.2.3', 'Sandwich', 'Sandwich - dobar skroz', 9.00, 334, 1, '2020-02-09 07:54:16', '2020-02-09 07:54:16'),
-(10, 'https://www.balawholesalers.com/wp-content/uploads/2019/09/diet-coca-cola-330ml-glass.jpg', 'Coca Cola', 'Refreshing beverage', 3.50, 9999, 11, '2020-02-09 07:54:16', '2020-02-09 07:54:16');
+INSERT INTO `products` (`id`, `imagePath`, `title`, `description`, `price`, `amount`, `type`, `subtype`, `created_at`, `updated_at`) VALUES
+(1, 'https://i.ibb.co/b5YZzbG/oie-Gw-MVXp-FSQEEm.jpg', 'Hamburger', 'A sandwich consisting of a patty of hamburger in a split typically round bun', 7.00, 1234, 'Food', 'Sandwich', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(2, 'https://i.ibb.co/PxWgtBR/cheeseburger1.jpg', 'Cheeseburger', 'A hamburger topped with a slice of cheese', 8.00, 23234, 'Food', 'Sandwich', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(3, 'https://i.ibb.co/nDGbxXy/oie-NFi7-Uto1wk-CZ.jpg', 'Chicken Nuggets', 'Deep-fried rounded chicken meat', 6.00, 1634, 'Food', 'Chicken', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(4, 'https://i.ibb.co/Fn42zhL/oie-r7-Z9-OIC3d51-K.jpg', 'Sandwich', 'Two or more slices of bread or a split roll having a filling in between', 9.00, 334, 'Food', 'Sandwich', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(5, 'https://i.ibb.co/7Ynkjd8/oie-lg-QA4l-VQo-TPm.jpg', 'Coca Cola', 'Classic great taste', 3.50, 9999, 'Drinks', 'Soda', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(6, 'https://i.ibb.co/gFCNG0r/oie-QUcrirw9b3-Bm.jpg', 'Hot-Dog', 'A frankfurter, especially one served hot in a long, soft roll and topped with various condiments.', 6.50, 1234, 'Food', 'Sandwich', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(7, 'https://i.ibb.co/tPdmjDx/oie-e-DOckth-RZYfb.jpg', 'Kebab', 'Cubes of meat (such as lamb or beef) marinated and cooked with vegetables usually on a skewer', 7.50, 1234, 'Food', 'Sandwich', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(8, 'https://i.ibb.co/mcDd1cq/oie-Th07-Qdfb8aa7.jpg', 'Gyro', 'A sandwich especially of lamb and beef, tomato, onion, and yogurt sauce on pita bread', 8.00, 1234, 'Food', 'Sandwich', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(9, 'https://i.ibb.co/zZwqz2x/oie-aek-A1k-FAEl3-Z.jpg', 'Fanta', 'Delicious Fruit Flavored Soda', 3.50, 9999, 'Drinks', 'Soda', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(10, 'https://i.ibb.co/6PPRLyx/oie-PCLPl-Io4psw0.png', 'Schweppes Indian Tonic', 'The iconic soft drink, based on Jacob Schweppe’s 1783 original formula.', 3.50, 9999, 'Drinks', 'Soda', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(11, 'https://i.ibb.co/Yd5tdf9/oie-ng-Qsf-Emi-Or-Px.jpg', 'Latte Macchiato', 'Coffee', 4.00, 9999, 'Drinks', 'Coffee', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(12, 'https://i.ibb.co/GQYB6sv/oie-j-OBCUq2v1l-F1.jpg', 'Espresso Macchiato', 'Espresso coffee drink with a small amount of milk, usually foamed.', 3.00, 9999, 'Drinks', 'Coffee', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(13, 'https://i.ibb.co/dg9MY1J/oie-l3-LKPMq-Nnq-F8.jpg', 'Heineken', 'Cold, fresh, high quality Heineken. Enjoyed near and far since 1873.', 3.50, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(14, 'https://i.ibb.co/mJvG92M/oie-k3-Y0-R0i-DSy-Xm.png', 'Ozujsko Hoppy', 'Znalacki odabir!', 3.50, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(15, 'https://i.ibb.co/Sv1Rx8X/oie-uf-DRUUi-ZKb-Cn.jpg', 'Guinness Draught', 'Famous for its smooth velvety texture and unique surge and settle.', 3.50, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(16, 'https://i.ibb.co/ScV7fBs/oie-LNBG38-Ms-QMp-D.jpg', 'Guinness Rye Pake Ale', 'Rye Pale Ale offers a rustic peppery bite balanced with citrusy grapefruit notes from the Mosaic and Cascade hops', 3.50, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(17, 'https://i.ibb.co/4K8bYm7/imgonline-com-ua-Piconpic-7xo-QTp7awf-Osb-N6.jpg', 'Pozoj, Zmajska Pivovara', 'Pozoj! Hmeljna bomba!', 3.50, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(18, 'https://i.ibb.co/C6GfjYC/imgonline-com-ua-Piconpic-Hv-Akvr-Mz-NZBB-1.jpg', 'Pils, Zmajska Pivovara', 'Robusno je, nije šala!', 3.50, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(19, 'https://i.ibb.co/kq7dPS9/imgonline-com-ua-Piconpic-S1-WZhdw-KYr0nl.jpg', 'Pale Ale, Zmajska Pivovara', 'Realno, pitko je do bola!', 3.50, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(20, 'https://i.ibb.co/RBZZNsM/imgonline-com-ua-Piconpic-jb-Wy-Np-DSkbb-MC3-X-2.jpg', 'Hoppy Wheat, Zmajska Pivovara', 'Lagano se pije, a teško zaboravlja!', 4.00, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(21, 'https://i.ibb.co/1s2564g/oie-iv8-Edded-PY6l.jpg', 'Pivovara Medvedgrad', 'Gricka Vjestica, Zlatni Medvjed, Dva Klasa, Crna Kraljica', 5.50, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(22, 'https://i.ibb.co/3m7CKZg/oie-ICnv-Dsly-Mfah.jpg', 'Lovac (Porter Pale, Ale)', 'Beer', 4.00, 9999, 'Drinks', 'Beer', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(23, 'https://i.ibb.co/c6Xjt60/oie-Bho-LF9-ZXx2-FO.jpg', 'Southern Comfort Black', 'A robust whiskey-forward profile with subtle spice and fruity accents, our Black label takes the original Southern Comfort experience up a notch', 6.00, 9999, 'Drinks', 'Whiskey', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(24, 'https://i.ibb.co/P4Q0K1q/oie-BAWg-FPGb-Yn51.jpg', 'Southern Comfort Original', 'Southern Comfort Original is inspired by our founder’s 1874 recipe, with core whiskey notes and iconic fruit and spice accents.', 5.50, 9999, 'Drinks', 'Whiskey', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(25, 'https://i.ibb.co/R3fT8pP/oie-Qr6-Nm-YZKP621.jpg', 'Aviation Gin', 'Crafted with a blend of botanicals. Elevated, yet smoother, more subtle, and balanced.', 5.50, 9999, 'Drinks', 'Gin', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(26, 'https://i.ibb.co/SJkF9qf/oie-8-BUje-X3h-Bv0-O.jpg', 'Pizza', 'A dish made typically of flattened bread dough spread with a savory mixture usually including tomatoes and cheese and often other toppings and baked', 9.00, 9999, 'Food', 'Pizza', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(27, 'https://i.ibb.co/Z8znqpT/oie-nory086-C209-T.jpg', 'Sausages, Griled', 'Grilled Sausages', 7.50, 9999, 'Food', 'Grill', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(28, 'https://i.ibb.co/rmZHC6b/oie-ab-UGQubc-Fx-CS.jpg', 'Steak, Grilled', 'Grilled Steak', 11.00, 9999, 'Food', 'Grill', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(29, 'https://i.ibb.co/NmdWMdP/oie-uz-SPu-MDh-G1-K7.jpg', 'Cevapi', 'A grilled dish of minced meat', 7.00, 9999, 'Food', 'Grill', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(30, 'https://i.ibb.co/7Yjzptj/oie-YXSOs3-I7b-R3n.jpg', 'Grilled Chicken', 'Grilled Chicken', 8.00, 9999, 'Food', 'Grill', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(31, 'https://i.ibb.co/YL5Yjmy/oie-epw-Qbu-Gqtg3-I.jpg', 'Grilled Fish', 'Grilled Fish', 9.00, 9999, 'Food', 'Grill', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(32, 'https://i.ibb.co/7vYx0Sj/oie-r-PZRQQFw-ASDJ.jpg', 'Burrito', 'A flour tortilla rolled or folded around a filling (as of meat, beans, and cheese)', 7.50, 9999, 'Food', 'Mexican', '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(33, 'https://i.ibb.co/FgX5tD1/oie-Yw-WFjstyt-Fr-C.jpg', 'Taco', 'A tortilla that is folded or rolled and stuffed with a mixture (as of seasoned meat, cheese, and lettuce)', 7.00, 9999, 'Food', 'Mexican', '2020-02-24 17:39:41', '2020-02-24 17:39:41');
 
 -- --------------------------------------------------------
 
@@ -137,7 +158,7 @@ INSERT INTO `products` (`id`, `imagePath`, `title`, `description`, `price`, `amo
 
 CREATE TABLE `roles` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -147,9 +168,9 @@ CREATE TABLE `roles` (
 --
 
 INSERT INTO `roles` (`id`, `name`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '2020-02-09 07:54:15', '2020-02-09 07:54:15'),
-(2, 'waiter', '2020-02-09 07:54:15', '2020-02-09 07:54:15'),
-(3, 'user', '2020-02-09 07:54:15', '2020-02-09 07:54:15');
+(1, 'admin', '2020-02-24 17:39:40', '2020-02-24 17:39:40'),
+(2, 'waiter', '2020-02-24 17:39:40', '2020-02-24 17:39:40'),
+(3, 'user', '2020-02-24 17:39:40', '2020-02-24 17:39:40');
 
 -- --------------------------------------------------------
 
@@ -172,8 +193,7 @@ CREATE TABLE `role_user` (
 INSERT INTO `role_user` (`id`, `role_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, NULL, NULL),
 (2, 2, 2, NULL, NULL),
-(3, 3, 3, NULL, NULL),
-(4, 3, 4, NULL, NULL);
+(3, 3, 3, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -197,11 +217,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin User', 'admin@admin.com', NULL, '$2y$10$hfPcPMSKktME.uc2o6fU9OXOjW0wgUABaJgxEBTAaDxZtDfuDOQl6', NULL, '2020-02-09 07:54:16', '2020-02-09 07:54:16'),
-(2, 'Waiter User', 'waiter@waiter.com', NULL, '$2y$10$.nRipDPSEswXDqVvITprseyjfYKLf9KA8niqtB79FjL3x46EV5P4e', NULL, '2020-02-09 07:54:16', '2020-02-09 07:54:16'),
-(3, 'Generic User', 'user@user.com', NULL, '$2y$10$j48TNChHew68BH.CAuEEbuJXziiHnAVG3V80uqWR6ylmiJRDgqlLW', NULL, '2020-02-09 07:54:16', '2020-02-09 07:54:16'),
-(4, 'Testerer', 'test2@test.com', NULL, '$2y$10$qWxnJhqwmRsAoeKlm01dsebFD9pof4AqWLiOHjsC3pHz76lV8Q.lu', NULL, '2020-02-09 07:59:06', '2020-02-09 07:59:06'),
-(5, 'test', 'test@test.com', NULL, '12345678', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+(1, 'Admin User', 'admin@admin.com', NULL, '$2y$10$jS758cm.OaDIpGurYTBDpuTj6uRoz.wt3WzQPGY9ev2t.HucxtcGO', NULL, '2020-02-24 17:39:40', '2020-02-24 17:39:40'),
+(2, 'Waiter User', 'waiter@waiter.com', NULL, '$2y$10$Gw3Rj6jJnOkDHNGq9z0Rae7nS44e66uQY/X1vufr4ePR65AAmYJMO', NULL, '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(3, 'Generic User', 'user@user.com', NULL, '$2y$10$s6pshlj77EXxH6X9RSKMx.2nQ5Tg0BRj32VIAOyPqFm9XpgG.H1qm', NULL, '2020-02-24 17:39:41', '2020-02-24 17:39:41'),
+(5, 'test', 'test@test.com', NULL, '123', NULL, '2020-02-23 23:00:00', '2020-02-23 23:00:00'),
+(6, 'test2', 'test2@test.com', NULL, '12345678', NULL, '2020-02-24 18:44:04', '2020-02-24 18:44:04');
 
 --
 -- Indexes for dumped tables
@@ -276,13 +296,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -294,13 +314,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

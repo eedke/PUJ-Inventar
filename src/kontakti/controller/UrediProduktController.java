@@ -14,9 +14,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import kontakti.model.Baza;
 import kontakti.model.ProductModel;
 
 import java.net.URL;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class UrediProduktController implements Initializable {
@@ -39,6 +43,8 @@ public class UrediProduktController implements Initializable {
     TextField imageTxt;
     @FXML
     Button editBtn;
+    @FXML
+    Button deleteButton;
     int id = 0;
 
     public UrediProduktController(int id) {
@@ -72,11 +78,27 @@ public class UrediProduktController implements Initializable {
         podvrstaTxt.setText(data.get(0).getSubtype());
 
         editBtn.setOnAction(this::spasi);
+        deleteButton.setOnAction(this::deleteProduct);
     }
 
     @FXML
     public void spasi(ActionEvent e) {
         ProductModel pm = new ProductModel(id, imageTxt.getText(), imeTxt.getText(), opisTxt.getText(), Float.parseFloat(cijenaTxt.getText()), Integer.parseInt(kolicinaTxt.getText()), vrstaTxt.getText(), podvrstaTxt.getText());
         pm.uredi();
+    }
+
+    public void deleteProduct(ActionEvent e){
+        Baza DB = new Baza();
+        PreparedStatement delete = DB.exec("DELETE FROM products WHERE id=?");
+        try {
+            delete.setInt(1, id);
+            delete.executeUpdate();
+            System.out.println("Uspjesno izbrisan produkt, id:"+id);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        Stage stage = (Stage) deleteButton.getScene().getWindow();
+        stage.close();
+
     }
 }

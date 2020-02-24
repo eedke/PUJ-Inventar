@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class ProductModel {
+public class ProductModel extends Artikal implements Spremanje{
     SimpleIntegerProperty id;
     SimpleStringProperty imagePath;
     SimpleStringProperty title;
@@ -23,23 +23,23 @@ public class ProductModel {
     SimpleStringProperty subtype;
 
     public ProductModel(Integer id, String title, String description, Float price, Integer amount, String type, String subtype) {
-
+        super(title, description, price);
         this.id = new SimpleIntegerProperty(id);
-        this.title = new SimpleStringProperty(title);
+        this.title = new SimpleStringProperty(super.title);
         this.imagePath = new SimpleStringProperty("http://nesto.ne");
-        this.description = new SimpleStringProperty(description);
-        this.price = new SimpleFloatProperty(price);
+        this.description = new SimpleStringProperty(super.description);
+        this.price = new SimpleFloatProperty(super.price);
         this.amount = new SimpleIntegerProperty(amount);
         this.type = new SimpleStringProperty(type);
         this.subtype = new SimpleStringProperty(subtype);
     }
     public ProductModel(Integer id, String imagePath, String title, String description, Float price, Integer amount, String type, String subtype) {
-
+        super(title, description, price);
         this.id = new SimpleIntegerProperty(id);
         this.imagePath = new SimpleStringProperty(imagePath);
-        this.title = new SimpleStringProperty(title);
-        this.description = new SimpleStringProperty(description);
-        this.price = new SimpleFloatProperty(price);
+        this.title = new SimpleStringProperty(super.title);
+        this.description = new SimpleStringProperty(super.description);
+        this.price = new SimpleFloatProperty(super.price);
         this.amount = new SimpleIntegerProperty(amount);
         this.type = new SimpleStringProperty(type);
         this.subtype = new SimpleStringProperty(subtype);
@@ -141,7 +141,7 @@ public class ProductModel {
             insert.setString(6, this.type.getValue());
             insert.setString(7, this.subtype.getValue());
             insert.executeUpdate();
-            System.out.println("insert??");
+            System.out.println("insert product!");
         } catch (SQLException ex) {
             Logger.getLogger(KontaktModel.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -159,11 +159,13 @@ public class ProductModel {
             update.setString(7, this.subtype.getValue());
             update.setInt(8, this.id.getValue());
             update.executeUpdate();
-            System.out.println("update????");
+            System.out.println("update product!");
         } catch (SQLException ex) {
             Logger.getLogger(KontaktModel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+
 
     public static ObservableList<ProductModel> editProdukt(int pid) {
         ObservableList<ProductModel> lista = FXCollections.observableArrayList();

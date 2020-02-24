@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.text.*?>
@@ -45,7 +46,11 @@
                 <TextField fx:id="podvrstaTxt" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                 <Label text="  IMAGE LINK" GridPane.rowIndex="7" />
                 <TextField fx:id="imageTxt" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-                <Button mnemonicParsing="false" fx:id="editBtn" text="Uredi produkt" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                <Button fx:id="editBtn" mnemonicParsing="false" text="Uredi produkt" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Button fx:id="deleteButton" mnemonicParsing="false" text="Izbrisi Produkt" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+               <GridPane.margin>
+                  <Insets right="20.0" />
+               </GridPane.margin></Button>
             </children>
         </GridPane>
       <ImageView fx:id="imageEdit" fitHeight="150.0" fitWidth="200.0" layoutX="200.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" />

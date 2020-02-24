@@ -42,7 +42,7 @@
                 <TextField fx:id="kolicinaTxt" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                 <TextField fx:id="vrstaTxt" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                 <TextField fx:id="podvrstaTxt" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-                <Button mnemonicParsing="false" onAction="#spasi" text="Dodaj produkt" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                <Button mnemonicParsing="false" fx:id="closeButton" onAction="#spasi" text="Dodaj produkt" GridPane.columnIndex="1" GridPane.rowIndex="7" />
             </children>
         </GridPane>
     </children>

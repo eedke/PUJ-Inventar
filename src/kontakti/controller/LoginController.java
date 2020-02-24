@@ -41,7 +41,7 @@ public class LoginController implements Initializable {
                     Parent root;
                     root = FXMLLoader.load(getClass().getClassLoader().getResource("kontakti/view/Kontakti.fxml"));
                     Stage stage = new Stage();
-                    stage.setTitle("Prikaz svih kontakata u Bazi podataka");
+                    stage.setTitle("Prikaz svih korisnika u Bazi podataka");
                     stage.setScene(new Scene(root, 610, 450));
                     stage.show();
 
